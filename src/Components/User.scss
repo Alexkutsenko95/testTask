@@ -1,0 +1,17 @@
+.filter-list {
+  margin-left: 20px;
+  margin-right: 20px;
+  .plus {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    height: 30px;
+    border: 1px solid black;
+    width: 100%;
+    background: rgb(220, 220, 220);;
+  }
+  :visited {
+    color: inherit;
+  }
+}

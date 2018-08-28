@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "email": "alex@gmai.cccc",
+      "name": "Alexander",
+      "id": 1
+    },
+    {
+      "email": "Ivan@gmail.com",
+      "name": "Ivan",
+      "id": 2
+    },
+    {
+      "email": "ukr@ukr.net",
+      "name": "Gena",
+      "id": 3
+    },
+    {
+      "email": "BB@gj.com",
+      "name": "Alex",
+      "id": 4
+    },
+    {
+      "email": "Kirk@gmail.com",
+      "name": "Kirk",
+      "id": 5
+    }
+  ]
+}

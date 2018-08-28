@@ -1,0 +1,83 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .form-fields {
+    width: 100%;
+    display: table-cell;
+    margin-left: 20px;
+    margin-right: 25px;
+    .fields-wrapper {
+      width: 100%;
+      .field-wrapper {
+        .field {
+          .text-field {
+            width: 100%;
+            min-height: 25px;
+          }
+        }
+      }
+
+    }
+  }
+  .form-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .delete-button {
+      border-radius: 9px;
+      background-color: red;
+      border: none;
+      color: white;
+      cursor: pointer;
+      height: 35px;
+      width: 35%;
+      min-width: 60px;
+      max-width: 180px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .submit-wrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      width: 100%;
+      .ok-button {
+        outline: none;
+        border-radius: 9px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        height: 35px;
+        width: 30%;
+        min-width: 60px;
+        max-width: 180px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      .cancel-button {
+        outline: none;
+        margin-right: 20px;
+        color: #000;
+        border-radius: 9px;
+        background-color: transparent;
+        border: black 1px solid;
+        height: 35px;
+        width: 30%;
+        min-width: 60px;
+        max-width: 180px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+  }
+}
