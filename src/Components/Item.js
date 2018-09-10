@@ -8,7 +8,6 @@ export const Item = props => {
         <div className="list-group-item" data-category={item} key={item.id}>
             <div className="list-group-item-title">
                 <Link className="list-group-item-link" to={`/user/${item.id}`}>
-
                     {item.name}
                 </Link>
                 {item.email}

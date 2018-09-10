@@ -2,7 +2,7 @@ import React from 'react';
 import {List} from './List';
 import './User.scss'
 import {Link} from 'react-router-dom';
-import {deleteData, fetchData} from "../actions";
+import {fetchData, deleteData} from "../actions/sagasActions";
 import {connect} from "react-redux";
 
 
@@ -62,7 +62,6 @@ class Users extends React.Component {
                 </form>
                 <List items={this.state.items} deleteData={deleteData}/>
                 <Link className="plus" to={`/user/new`}>
-
                     +
                 </Link>
             </div>);
@@ -72,6 +71,6 @@ class Users extends React.Component {
 const mapStateToProps = (state) => {
     return {users: state.users.users};
 };
-const mapDispatchToProps = {deleteData, fetchData};
+const mapDispatchToProps = {fetchData, deleteData};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users)

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import './App.scss';
-import {fetchData} from './actions'
+import {fetchData} from './actions/sagasActions'
 import {connect} from 'react-redux'
 
 class App extends PureComponent {
@@ -10,6 +10,7 @@ class App extends PureComponent {
     }
 
     render() {
+
         return (
             <div className="App">
                 {this.props.match.params.userId ? <h1>My Address Book {this.props.match.params.userId === 'user/new'

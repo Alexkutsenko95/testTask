@@ -9,7 +9,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import {reducer as formReducer} from 'redux-form'
 import users from './Reducer/users'
-import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {
     ConnectedRouter,
@@ -17,8 +16,11 @@ import {
     routerMiddleware
 } from 'react-router-redux'
 import {Route} from "react-router";
-
+import createSagaMiddleware from 'redux-saga'
+import mySaga from './sagas'
 import createHistory from "history/createBrowserHistory";
+
+const sagaMiddleware = createSagaMiddleware();
 
 const reducer = combineReducers({
     users,
@@ -29,8 +31,11 @@ const reducer = combineReducers({
 const history = createHistory();
 
 const store = createStore(
-    reducer, composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
+    reducer, composeWithDevTools(applyMiddleware(routerMiddleware(history), sagaMiddleware))
 );
+
+sagaMiddleware.run(mySaga);
+
 
 ReactDOM.render(
     <Provider store={store}>

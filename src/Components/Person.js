@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form'
 import './Person.scss'
 import {connect} from 'react-redux';
-import {patchData, postData, deleteData} from '../actions'
+import {patchData, postData, deleteData} from '../actions/sagasActions'
 import {
     push
 } from 'react-router-redux'
@@ -44,7 +44,6 @@ class Person extends React.Component {
         this.props.deleteData(values);
     }
 
-
     render() {
         const {handleSubmit, pristine, reset, submitting} = this.props;
 
@@ -73,7 +72,7 @@ class Person extends React.Component {
                                         onClick={() => this.props.dispatch(push('/'))}>
                                     Cancel
                                 </button>
-                                <button type="submit" className='ok-button' disabled={pristine || submitting}>
+                                <button type="submit" className='ok-button' disabled={submitting}>
                                     Ok
                                 </button>
 
@@ -137,5 +136,5 @@ const mapStateToProps = (state, ownProps) => {
 
 };
 
-const mapDispatchToProps = {patchData, postData, deleteData};
+const mapDispatchToProps = {patchData, deleteData, postData};
 export default connect(mapStateToProps, mapDispatchToProps)(Person);

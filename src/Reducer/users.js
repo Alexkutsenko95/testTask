@@ -1,4 +1,13 @@
-import {FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_ERROR, PATCH_DATA, POST_DATA, DELETE_DATA} from '../actions/types';
+import {
+    FETCH_DATA,
+    FETCH_DATA_SUCCESS,
+    FETCH_DATA_ERROR,
+    PATCH_DATA,
+    POST_DATA,
+    DELETE_DATA,
+    PATCH_DATA_SUCCESS,
+    DELETE_DATA_SUCCESS, POST_DATA_SUCCES
+} from '../actions/types';
 import update from 'react-addons-update';
 
 
@@ -14,7 +23,6 @@ export default function (state = INITIAL_STATE, action) {
                 users: void 0,
                 error: null
             };
-
         case FETCH_DATA_SUCCESS:
             return {
                 users: action.payload,
@@ -22,17 +30,26 @@ export default function (state = INITIAL_STATE, action) {
             };
         case POST_DATA:
             return {
+                ...state
+            };
+        case POST_DATA_SUCCES:
+            return {
                 ...state,
                 users: [...state.users, action.payload]
             };
 
         case PATCH_DATA:
+            return {...state};
+        case PATCH_DATA_SUCCESS:
             return update(state, {
                 users: {
                     [action.payload.id - 1]: {$set: action.payload}
                 }
             });
+
         case DELETE_DATA:
+            return {...state};
+        case DELETE_DATA_SUCCESS:
             return {...state, users: state.users.filter(user => user.id !== action.payload.id)};
         case FETCH_DATA_ERROR:
             return {
